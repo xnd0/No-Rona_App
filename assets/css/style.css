@@ -4,7 +4,7 @@
 
 
 body {
-    background-color: rgb(244, 239, 232);
+    background-color: rgb(234, 221, 202);
 }
 
 nav {
@@ -12,11 +12,20 @@ nav {
     background-color: rgb(240, 209, 235);
 }
 
+div {
+    background-color: rgb(244, 239, 232);
+}
 
 
 /* --- Class Selectors --- */
+.main {
+    background-color: rgb(240, 209, 235);
+}
+
 .outline {
     border: 2px solid black;
     border-radius: 5px;
     margin: 2%;
+    padding-left: 8px;
+    padding-right: 8px;
 }
