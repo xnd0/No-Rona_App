@@ -18,7 +18,7 @@ const options = {
 
 fetch('https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random', options)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response => console.log(response.value))
 	.catch(err => console.error(err));
 
 
