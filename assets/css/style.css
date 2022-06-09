@@ -16,6 +16,12 @@ div {
     background-color: rgb(244, 239, 232);
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
 
 /* --- Class Selectors --- */
 .main {
