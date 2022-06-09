@@ -16,6 +16,12 @@ div {
     background-color: rgb(244, 239, 232);
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
 
 /* --- Class Selectors --- */
 .main {
@@ -28,4 +34,13 @@ div {
     margin: 2%;
     padding-left: 8px;
     padding-right: 8px;
+}
+
+
+/* --- ID Selectors --- */
+
+#quoteContainer {
+    background-color: rgb(133, 19, 19);
+    color:antiquewhite;
+    text-align: center;
 }
