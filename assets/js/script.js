@@ -4,6 +4,8 @@
 
 
 
+var quoteContainer = document.getElementById('quoteContainer');
+
 
 
 // Chuck Norris API URL
@@ -18,24 +20,20 @@ const options = {
 
 fetch('https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random', options)
 	.then(response => response.json())
-	.then(response => console.log(response.value))
-	.catch(err => console.error(err));
+	.then(
+        response => {console.log(response.value);
+            console.log("test");
+            // --display the quote
+            var chuckQuote = document.createElement('h3');
+            chuckQuote.textContent = response.value;
+            quoteContainer.append(chuckQuote);
+        }).catch(err => console.error(err));
 
 
 
-// var requestUrl = 'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random'
 
 
 
-
-// fetch(requestUrl)
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log('Fetch Response \n-------------');
-//     console.log(data);
-//   });
 
 
   
