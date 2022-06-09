@@ -29,3 +29,12 @@ div {
     padding-left: 8px;
     padding-right: 8px;
 }
+
+
+/* --- ID Selectors --- */
+
+#quoteContainer {
+    background-color: rgb(133, 19, 19);
+    color:antiquewhite;
+    text-align: center;
+}
