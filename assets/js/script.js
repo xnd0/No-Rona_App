@@ -7,6 +7,7 @@
 var quoteContainer = document.getElementById('quoteContainer');
 var setupContainer = document.getElementById('setupJoke');
 var jokeContainer = document.getElementById('dadJoke');
+var badJokeContainer = document.getElementById('badJoke');
 
 
 // --- Chuck Norris API URL --- //
@@ -64,6 +65,28 @@ fetch('https://dad-jokes.p.rapidapi.com/random/joke', options2)
 	}).catch(err => console.error(err));
 
 
+
+
+// --- BAD Jokes API URL --- //
+const options3 = {
+	method: 'GET',
+	headers: {
+		accept: 'application/json',
+		'X-RapidAPI-Key': '435d50c541mshfc9db86f68d6624p177e00jsn2e5482e44a2b',
+		'X-RapidAPI-Host': 'jokes-by-api-ninjas.p.rapidapi.com'
+	}
+};
+
+fetch('https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes', options3)
+	.then(response => response.json())
+	.then(
+        response => {console.log(response[0].joke);
+            console.log("test BAD joke ^^");
+            // --display the BAD joke
+            var badJoke = document.createElement('h3');
+            badJoke.textContent = response[0].joke;
+            badJokeContainer.append(badJoke);
+        }).catch(err => console.error(err));
 
 
 
