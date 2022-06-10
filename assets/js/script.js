@@ -9,12 +9,29 @@ var setupContainer = document.getElementById('setupJoke');
 var jokeContainer = document.getElementById('dadJoke');
 var badJokeContainer = document.getElementById('badJoke');
 
+var chuckQuoteArray = [];
+var chuckQuoteText = "";
+
 
 
 // --- Functions Area --- //
 
 function saveAdvice() {
 	console.log('test save click')
+
+	// let adviceList = localStorage.getItem("chuckAdvice");
+
+
+	var storedChuck = JSON.parse(localStorage.getItem("chuckAdvice"));
+			if (storedChuck !== null) {
+				chuckQuoteArray = storedChuck;
+			};
+			chuckQuoteArray.push(chuckQuoteText);
+
+	localStorage.setItem("chuckAdvice", JSON.stringify(chuckQuoteArray));
+
+
+
 }
 
 
@@ -38,9 +55,15 @@ fetch('https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random', o
         response => {console.log(response.value);
             console.log("test");
             // --display the quote
+
             var chuckQuote = document.createElement('h3');
             chuckQuote.textContent = response.value;
+			chuckQuoteText = response.value;
             quoteContainer.append(chuckQuote);
+
+			
+
+
         }).catch(err => console.error(err));
 
 
