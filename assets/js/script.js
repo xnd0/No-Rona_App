@@ -5,6 +5,7 @@
 
 
 var quoteContainer = document.getElementById('quoteContainer');
+var setupContainer = document.getElementById('setupJoke');
 var jokeContainer = document.getElementById('dadJoke');
 
 
@@ -50,9 +51,15 @@ fetch('https://dad-jokes.p.rapidapi.com/random/joke', options2)
 
 		// response => {console.log(response.body.type);	
             console.log("test dadJoke ^^");
-            // --display the joke
+
+			// --display the setup to the dadJoke
+			var jokeSetup = document.createElement('h3');
+            jokeSetup.textContent = response.body[0].setup;
+            setupContainer.append(jokeSetup);
+
+            // --display the joke punchline
             var dadJoke = document.createElement('h3');
-            dadJoke.textContent = response.body.punchline;
+            dadJoke.textContent = response.body[0].punchline;
             jokeContainer.append(dadJoke);
 	}).catch(err => console.error(err));
 
