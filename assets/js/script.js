@@ -10,6 +10,18 @@ var jokeContainer = document.getElementById('dadJoke');
 var badJokeContainer = document.getElementById('badJoke');
 
 
+
+// --- Functions Area --- //
+
+function saveAdvice() {
+	console.log('test save click')
+}
+
+
+
+
+
+
 // --- Chuck Norris API URL --- //
 const options = {
 	method: 'GET',
@@ -90,6 +102,11 @@ fetch('https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes', options3)
 
 
 
+
+
+// --- Event Listeners --- //
+
+norrisButton.addEventListener("click", saveAdvice);
 
 
   
