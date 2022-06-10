@@ -29,8 +29,29 @@ fetch('https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random', o
             quoteContainer.append(chuckQuote);
         }).catch(err => console.error(err));
 
+//Covid Act Now API
+//API key: 805adad0a8864a70a3239476c6971e3e
+//URLs
+/*
+Current Data for All States, Counties, and Metro
+https://api.covidactnow.org/v2/states.json?apiKey=YOUR_KEY_HERE
+https://api.covidactnow.org/v2/counties.json?apiKey=YOUR_KEY_HERE
+https://api.covidactnow.org/v2/cbsas.json?apiKey=YOUR_KEY_HERE
 
+Current Data for Specific Locations
+https://api.covidactnow.org/v2/state/{state}.json?apiKey=YOUR_KEY_HERE
+https://api.covidactnow.org/v2/county/{fips}.json?apiKey=YOUR_KEY_HERE
+https://api.covidactnow.org/v2/cbsa/{cbsa_code}.json?apiKey=YOUR_KEY_HERE
+*/
 
+fetch('https://api.covidactnow.org/v2/cbsa/31080.json?apiKey=805adad0a8864a70a3239476c6971e3e')
+		.then(response => response.json())
+		.then(
+			response => {console.log(response.metrics.weeklyNewCasesPer100k)
+				var resultTest = document.getElementById('api-test')
+				resultTest.textContent = response.metrics.weeklyNewCasesPer100k
+			}
+		)
 
 
 
