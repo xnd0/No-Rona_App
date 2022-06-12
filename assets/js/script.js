@@ -19,9 +19,6 @@ var chuckQuoteText = "";
 function saveAdvice() {
 	console.log('test save click')
 
-	// let adviceList = localStorage.getItem("chuckAdvice");
-
-
 	var storedChuck = JSON.parse(localStorage.getItem("chuckAdvice"));
 			if (storedChuck !== null) {
 				chuckQuoteArray = storedChuck;
@@ -30,12 +27,21 @@ function saveAdvice() {
 
 	localStorage.setItem("chuckAdvice", JSON.stringify(chuckQuoteArray));
 
-
-
 }
 
 
 
+function displaySaved() {
+	let adviceList = JSON.parse(localStorage.getItem("chuckAdvice"))
+
+	for (let i = 0; i < adviceList.length; i++) {
+        const adviceEl = document.createElement("li");
+        adviceEl.textContent = adviceList[i];
+        savedQuotes.appendChild(adviceEl); 
+    }
+};
+
+displaySaved();
 
 
 
