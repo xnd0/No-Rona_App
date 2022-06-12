@@ -163,6 +163,7 @@ fetch('https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes', options3)
 			// --display the BAD joke
 			var badJoke = document.createElement('h3');
 			badJoke.textContent = response[0].joke;
+			badJokeText = response[0].joke;
 			badJokeContainer.append(badJoke);
 		}).catch(err => console.error(err));
 
