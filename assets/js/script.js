@@ -139,6 +139,8 @@ fetch('https://dad-jokes.p.rapidapi.com/random/joke', options2)
 			var dadJoke = document.createElement('h3');
 			dadJoke.textContent = response.body[0].punchline;
 			jokeContainer.append(dadJoke);
+
+			dadJokeText =(response.body[0].setup + '--' + response.body[0].punchline);
 		}).catch(err => console.error(err));
 
 
