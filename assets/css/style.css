@@ -4,7 +4,8 @@
 
 
 body {
-    background-color: rgb(234, 221, 202);
+    /* background-color: rgb(234, 221, 202); */
+    background-image: linear-gradient(white, rgb(150, 138, 120));
 }
 
 nav {
