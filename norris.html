@@ -32,31 +32,46 @@
                         Dad Jokes
                     </label>
                 </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Bad Jokes
+                    </label>
+                </div>
             </section>
+
+            <a href="./saveDisplay.html">-Saved Things Page-</a>
 
         </nav>
     </section>
 
+    <div style="padding-top:40.000%;position:relative;"><iframe src="https://gifer.com/embed/4mV" width="100%" height="100%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div><p></p>
+
     <!-- Chuck Norris API return section -->
-    <section class="outline">
-        <h2>Advice from Chuck Norris:</h2>
-        <div class="outline" id="quoteContainer"></div>
-        <img src="./assets/images/chuckNorrisStrapped.jpg" alt="Chuck Norris stylishly holding two guns">
+    <section id="card-wrap">
+        <section class="outline card">
+            <h2>Advice from Chuck Norris:</h2>
+            <div class="outline" id="quoteContainer"></div>
+            <button id="norrisButton">-Save This Advice-</button>
+            <img src="./assets/images/chuckNorrisStrapped.jpg" alt="Chuck Norris stylishly holding two guns">
+        </section>
+
+        <!-- Dadjokes API return section -->
+        <section class="outline card">
+            <h2>Dad Jokes:</h2>
+            <div class="outline" id="setupJoke"></div>
+            <div class="outline" id="dadJoke"></div>
+            <button id="dadJokeButton">-Save This Dad Joke-</button>
+        </section>
+
+        <!-- BAD jokes API return section -->
+        <section class="outline card">
+            <h2>Bad Jokes:</h2>
+            <div class="outline" id="badJoke"></div>
+            <button id="badJokeButton">-Save This Bad Joke-</button>
+        </section>
     </section>
 
-    <!-- Dadjokes API return section -->
-    <section class="outline">
-        <h2>Dad Jokes:</h2>
-        <div class="outline" id="setupJoke"></div>
-        <div class="outline" id="dadJoke"></div>
-    </section>
-
-    <!-- BAD jokes API return section -->
-    <section class="outline">
-        <h2>Bad Jokes:</h2>
-        <div class="outline" id="badJoke"></div>
-    </section>
-    
 
 
 
