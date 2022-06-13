@@ -1,0 +1,70 @@
+/* --------------------------- */
+/* ----- norris CSS File ----- */
+/* --------------------------- */
+
+
+body {
+    background-image: linear-gradient(white, rgb(150, 138, 120));
+}
+
+nav {
+    text-align: center;
+    background-image: linear-gradient(rgb(212, 175, 175), rgb(255, 110, 110));
+}
+
+div {
+    border-radius: 5px;
+    background-image: linear-gradient(white, rgb(150, 138, 120));
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border-radius: 5px;
+}
+
+/* --- Class Selectors --- */
+.main {
+    background-color: rgb(240, 209, 235);
+}
+
+.outline {
+    border: 1px solid rgb(19, 19, 19);
+    border-radius: 5px;
+    margin: 2%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+
+.title-bar {
+    background-image: linear-gradient(rgb(75, 75, 75), rgb(4, 2, 2));
+    color: white;
+}
+
+.card{
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(169, 142, 142), rgb(210, 210, 210));
+}
+/* --- ID Selectors --- */
+
+#quoteContainer {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    #card-wrap {        
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .card {
+        flex: 1 0 28%;
+        max-width: 25%;
+    }
+
+
+}
