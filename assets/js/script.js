@@ -33,33 +33,63 @@ fetch('https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random', o
 //API key: 805adad0a8864a70a3239476c6971e3e
 //URLs
 /*
-Current Data for All States, Counties, and Metro
-https://api.covidactnow.org/v2/states.json?apiKey=YOUR_KEY_HERE
-https://api.covidactnow.org/v2/counties.json?apiKey=YOUR_KEY_HERE
-https://api.covidactnow.org/v2/cbsas.json?apiKey=YOUR_KEY_HERE
-
 Current Data for Specific Locations
 https://api.covidactnow.org/v2/state/{state}.json?apiKey=YOUR_KEY_HERE
 https://api.covidactnow.org/v2/county/{fips}.json?apiKey=YOUR_KEY_HERE
 https://api.covidactnow.org/v2/cbsa/{cbsa_code}.json?apiKey=YOUR_KEY_HERE
 */
 
+//insert county code from list to fetch
+
+
+
 //retrieves county covid data from api 
-fetch('https://api.covidactnow.org/v2/county/{fips}.json?apiKey=805adad0a8864a70a3239476c6971e3e')
-		.then(response => response.json())
-		.then(
-			response => {console.log(response.metrics.weeklyNewCasesPer100k)
-				var resultTest = document.getElementById('api-results')
-				var listResult = document.createElement('li')
-				var communityLevel = response.communityLevels.cdcCommunityLevel
-				console.log(communityLevel)
+function goFetch() {
+	
+	var select = document.getElementById('county')
+	var value = select.options[select.selectedIndex].value
+	var apiURL = 'https://api.covidactnow.org/v2/county/' + value + '.json?apiKey=805adad0a8864a70a3239476c6971e3e'
+	console.log(value)
+	console.log(apiURL)
+	fetch(apiURL)
+			.then(response => response.json())
+			.then(
+				response => {console.log(response.metrics.weeklyNewCasesPer100k)
+					var levelPreface = document.getElementById('preface')
+					var communityLevel  
+					var levelText = document.getElementById('level')
+					var levelChanger = function() {
+						if (response.communityLevels.cdcCommunityLevel === 0) {
+							communityLevel = 'Low'
+						} else if (response.communityLevels.cdcCommunityLevel === 1) {
+							communityLevel = 'Medium'
+						} else if (response.communityLevels.cdcCommunityLevel === 2) {
+							communityLevel = 'High'
+						} else {
+							communityLevel = 'Unavailable, Sorry!'
+						}
+						levelText.innerHTML = communityLevel
+					}
+					levelPreface.innerHTML = 'CDC Community Level is '
+					levelChanger()
+					console.log(communityLevel)
+					
+
+
+
+					
+
+
+					
+
+
+					
 				
-
-			}
-		)
-
-
+				}
+			)
+		}
 
 
 
-  
+
+  document.getElementById('searchBtn').addEventListener('click', goFetch)
