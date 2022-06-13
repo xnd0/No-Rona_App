@@ -52,7 +52,7 @@ img {
 
 /* Gmap */
 
-element.style {
+/* element.style {
 }
 
 html, body {
@@ -73,9 +73,9 @@ body {
     line-height: 1.42857143;
     color: #333;
     background-color: #fff;
-}
+} */
 
-body {
+/* body {
     margin: 0;
 }
 
@@ -112,4 +112,8 @@ html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+} */
+
+#map {
+    display: inline;
 }
