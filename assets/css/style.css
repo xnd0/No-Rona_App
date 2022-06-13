@@ -21,6 +21,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     width: 90%;
+    border-radius: 5px;
 }
 
 /* --- Class Selectors --- */
@@ -36,11 +37,31 @@ img {
     padding-right: 8px;
 }
 
+.card{
+    text-align: center;
 
+}
 /* --- ID Selectors --- */
 
 #quoteContainer {
     background-color: rgb(133, 19, 19);
     color:antiquewhite;
     text-align: center;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    #card-wrap {        
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .card {
+        flex: 1 0 28%;
+        max-width: 25%;
+    }
+
+
 }

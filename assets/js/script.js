@@ -5,10 +5,88 @@
 
 
 var quoteContainer = document.getElementById('quoteContainer');
+var setupContainer = document.getElementById('setupJoke');
+var jokeContainer = document.getElementById('dadJoke');
+var badJokeContainer = document.getElementById('badJoke');
+
+var chuckQuoteArray = [];
+var chuckQuoteText = "";
+
+var dadJokeArray = [];
+var dadJokeText = "";
+
+var badJokeArray = [];
+var badJokeText = "";
 
 
 
-// Chuck Norris API URL
+// --- Functions Area --- //
+
+function saveAdvice() {
+	console.log('test save click')
+
+	var storedChuck = JSON.parse(localStorage.getItem("chuckAdvice"));
+	if (storedChuck !== null) {
+		chuckQuoteArray = storedChuck;
+	};
+	chuckQuoteArray.push(chuckQuoteText);
+	localStorage.setItem("chuckAdvice", JSON.stringify(chuckQuoteArray));
+};
+
+
+function saveDadJoke() {
+	console.log('test dadJoke click')
+
+	var storedDadJoke = JSON.parse(localStorage.getItem("dadJokeSave"));
+			if (storedDadJoke !== null) {
+				dadJokeArray = storedDadJoke;
+			};
+			dadJokeArray.push(dadJokeText);
+	localStorage.setItem("dadJokeSave", JSON.stringify(dadJokeArray));
+};
+
+
+function saveBadJoke() {
+	console.log('test badJoke click')
+
+	var storedBadJoke = JSON.parse(localStorage.getItem("badJokeSave"));
+	if (storedBadJoke !== null) {
+		badJokeArray = storedBadJoke;
+	};
+	badJokeArray.push(badJokeText);
+	localStorage.setItem("badJokeSave", JSON.stringify(badJokeArray));
+};
+
+
+
+// function displaySaved() {
+// 	let adviceList = JSON.parse(localStorage.getItem("chuckAdvice"))
+// 	for (let i = 0; i < adviceList.length; i++) {
+//         const adviceEl = document.createElement("li");
+//         adviceEl.textContent = adviceList[i];
+//         savedQuotes.appendChild(adviceEl); 
+//     }
+
+// 	let dadJokeList = JSON.parse(localStorage.getItem("dadJokeSave"))
+// 	for (let i = 0; i < dadJokeList.length; i++) {
+//         const dadEl = document.createElement("li");
+//         dadEl.textContent = dadJokeList[i];
+//         savedDadJokes.appendChild(dadEl); 
+//     }
+
+// 	let badJokeList = JSON.parse(localStorage.getItem("badJokeSave"))
+// 	for (let i = 0; i < badJokeList.length; i++) {
+//         const badEl = document.createElement("li");
+//         badEl.textContent = badJokeList[i];
+//         savedBadJokes.appendChild(badEl); 
+//     }
+// };
+
+// displaySaved();
+
+
+
+// --- Chuck Norris Fetch API URL --- //
 const options = {
 	method: 'GET',
 	headers: {
@@ -21,23 +99,77 @@ const options = {
 fetch('https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random', options)
 	.then(response => response.json())
 	.then(
-        response => {console.log(response.value);
-            console.log("test");
-            // --display the quote
-            var chuckQuote = document.createElement('h3');
-            chuckQuote.textContent = response.value;
-            quoteContainer.append(chuckQuote);
-        }).catch(err => console.error(err));
+		response => {
+			console.log(response.value);
+			console.log("test");
+			// --display the quote
 
-//Covid Act Now API
-//API key: 805adad0a8864a70a3239476c6971e3e
-//URLs
-/*
-Current Data for Specific Locations
-https://api.covidactnow.org/v2/state/{state}.json?apiKey=YOUR_KEY_HERE
-https://api.covidactnow.org/v2/county/{fips}.json?apiKey=YOUR_KEY_HERE
-https://api.covidactnow.org/v2/cbsa/{cbsa_code}.json?apiKey=YOUR_KEY_HERE
-*/
+			var chuckQuote = document.createElement('h3');
+			chuckQuote.textContent = response.value;
+			chuckQuoteText = response.value;
+			quoteContainer.append(chuckQuote);
+
+		}).catch(err => console.error(err));
+
+
+
+// --- Dad Jokes Fetch API URL --- //		
+const options2 = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '435d50c541mshfc9db86f68d6624p177e00jsn2e5482e44a2b',
+		'X-RapidAPI-Host': 'dad-jokes.p.rapidapi.com'
+	}
+};
+
+fetch('https://dad-jokes.p.rapidapi.com/random/joke', options2)
+	.then(response => response.json())
+	.then(
+		// response => {console.log(response.body);  // <--works?
+
+		response => {
+			console.log(response.body[0].punchline);
+
+			// response => {console.log(response.body.type);	
+			console.log("test dadJoke ^^");
+
+			// --display the setup to the dadJoke
+			var jokeSetup = document.createElement('h3');
+			jokeSetup.textContent = response.body[0].setup;
+			setupContainer.append(jokeSetup);
+
+			// --display the joke punchline
+			var dadJoke = document.createElement('h3');
+			dadJoke.textContent = response.body[0].punchline;
+			jokeContainer.append(dadJoke);
+
+			dadJokeText =(response.body[0].setup + '--' + response.body[0].punchline);
+		}).catch(err => console.error(err));
+
+
+
+// --- BAD Jokes Fetch API URL --- //
+const options3 = {
+	method: 'GET',
+	headers: {
+		accept: 'application/json',
+		'X-RapidAPI-Key': '435d50c541mshfc9db86f68d6624p177e00jsn2e5482e44a2b',
+		'X-RapidAPI-Host': 'jokes-by-api-ninjas.p.rapidapi.com'
+	}
+};
+
+fetch('https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes', options3)
+	.then(response => response.json())
+	.then(
+		response => {
+			console.log(response[0].joke);
+			console.log("test BAD joke ^^");
+			// --display the BAD joke
+			var badJoke = document.createElement('h3');
+			badJoke.textContent = response[0].joke;
+			badJokeText = response[0].joke;
+			badJokeContainer.append(badJoke);
+		}).catch(err => console.error(err));
 
 //insert county code from list to fetch
 
@@ -73,23 +205,15 @@ function goFetch() {
 					levelPreface.innerHTML = 'CDC Community Level is '
 					levelChanger()
 					console.log(communityLevel)
-					
-
-
-
-					
-
-
-					
-
-
-					
-				
-				}
+                     
+      }
 			)
 		}
+					
 
+document.getElementById('searchBtn').addEventListener('click', goFetch)
+// --- Event Listeners --- //
 
-
-
-  document.getElementById('searchBtn').addEventListener('click', goFetch)
+norrisButton.addEventListener("click", saveAdvice);
+dadJokeButton.addEventListener("click", saveDadJoke);
+badJokeButton.addEventListener("click", saveBadJoke);
