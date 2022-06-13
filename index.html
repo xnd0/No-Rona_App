@@ -41,17 +41,22 @@
 
         <!-- Location Input Form -->
         <div class="outline">
-            <h3>Location Input Form (grab userInput here)</h3>
+            <!-- <h3>Location Input Form (grab userInput here)</h3> -->
+                      <!-- Search input -->
+        <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
         </div>
 
         <!-- Results Area -->
         <div class="outline">
             <h2>Results:</h2>
-            <div>[1st Result Return]</div>
+            <!-- <div>[1st Result Return]</div>
             <div>[2nd Result Return]</div>
             <div>[3rd Result Return]</div>
             <div>[4th Result Return]</div>
-            <div>[ ... etc.... ]</div>
+            <div>[ ... etc.... ]</div> -->
+
+            <!-- Google map -->
+            <div id="map"  style="width:100%; height:100%"></div>
         </div>
 
         <!-- Save Button -->
@@ -73,7 +78,7 @@
     </section>   <!-- ^^ End Main Section ^^ -->
 <!-- dhcusdhiwhdiedh -->
 
-
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAF5xZ_fjKAvbZ5mFsSnnP8UHCPiw3N41c&callback=initMap" async defer></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
