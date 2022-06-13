@@ -9,6 +9,8 @@ var setupContainer = document.getElementById('setupJoke');
 var jokeContainer = document.getElementById('dadJoke');
 var badJokeContainer = document.getElementById('badJoke');
 
+var searchCountyButton = document.getElementById('searchCountyButton');
+
 var chuckQuoteArray = [];
 var chuckQuoteText = "";
 
@@ -58,31 +60,43 @@ function saveBadJoke() {
 };
 
 
+//retrieves county covid data from api 
+function goFetch() {
+	console.log('test is function firing');
+	
+	var select = document.getElementById('county')
+	var value = select.options[select.selectedIndex].value
+	var apiURL = 'https://api.covidactnow.org/v2/county/' + value + '.json?apiKey=805adad0a8864a70a3239476c6971e3e'
+	console.log(value)
+	console.log(apiURL)
+	fetch(apiURL)
+			.then(response => response.json())
+			.then(
+				response => {console.log(response.metrics.weeklyNewCasesPer100k)
+					var levelPreface = document.getElementById('preface')
+					var communityLevel  
+					var levelText = document.getElementById('level')
+					var levelChanger = function() {
+						if (response.communityLevels.cdcCommunityLevel === 0) {
+							communityLevel = 'Low'
+						} else if (response.communityLevels.cdcCommunityLevel === 1) {
+							communityLevel = 'Medium'
+						} else if (response.communityLevels.cdcCommunityLevel === 2) {
+							communityLevel = 'High'
+						} else {
+							communityLevel = 'Unavailable, Sorry!'
+						}
+						levelText.innerHTML = communityLevel
+					}
+					levelPreface.innerHTML = 'CDC Community Level is '
+					levelChanger()
+					console.log(communityLevel)
+                     
+      }
+			)
+		};
+					
 
-// function displaySaved() {
-// 	let adviceList = JSON.parse(localStorage.getItem("chuckAdvice"))
-// 	for (let i = 0; i < adviceList.length; i++) {
-//         const adviceEl = document.createElement("li");
-//         adviceEl.textContent = adviceList[i];
-//         savedQuotes.appendChild(adviceEl); 
-//     }
-
-// 	let dadJokeList = JSON.parse(localStorage.getItem("dadJokeSave"))
-// 	for (let i = 0; i < dadJokeList.length; i++) {
-//         const dadEl = document.createElement("li");
-//         dadEl.textContent = dadJokeList[i];
-//         savedDadJokes.appendChild(dadEl); 
-//     }
-
-// 	let badJokeList = JSON.parse(localStorage.getItem("badJokeSave"))
-// 	for (let i = 0; i < badJokeList.length; i++) {
-//         const badEl = document.createElement("li");
-//         badEl.textContent = badJokeList[i];
-//         savedBadJokes.appendChild(badEl); 
-//     }
-// };
-
-// displaySaved();
 
 
 
@@ -252,44 +266,11 @@ function initMap() {
 
 
 
-//retrieves county covid data from api 
-function goFetch() {
-	
-	var select = document.getElementById('county')
-	var value = select.options[select.selectedIndex].value
-	var apiURL = 'https://api.covidactnow.org/v2/county/' + value + '.json?apiKey=805adad0a8864a70a3239476c6971e3e'
-	console.log(value)
-	console.log(apiURL)
-	fetch(apiURL)
-			.then(response => response.json())
-			.then(
-				response => {console.log(response.metrics.weeklyNewCasesPer100k)
-					var levelPreface = document.getElementById('preface')
-					var communityLevel  
-					var levelText = document.getElementById('level')
-					var levelChanger = function() {
-						if (response.communityLevels.cdcCommunityLevel === 0) {
-							communityLevel = 'Low'
-						} else if (response.communityLevels.cdcCommunityLevel === 1) {
-							communityLevel = 'Medium'
-						} else if (response.communityLevels.cdcCommunityLevel === 2) {
-							communityLevel = 'High'
-						} else {
-							communityLevel = 'Unavailable, Sorry!'
-						}
-						levelText.innerHTML = communityLevel
-					}
-					levelPreface.innerHTML = 'CDC Community Level is '
-					levelChanger()
-					console.log(communityLevel)
-                     
-      }
-			)
-		}
-					
 
-document.getElementById('searchBtn').addEventListener('click', goFetch)
 // --- Event Listeners --- //
+
+searchCountyButton.addEventListener("click", goFetch);
+
 
 norrisButton.addEventListener("click", saveAdvice);
 dadJokeButton.addEventListener("click", saveDadJoke);
