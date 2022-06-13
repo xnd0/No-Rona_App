@@ -171,13 +171,49 @@ fetch('https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes', options3)
 			badJokeContainer.append(badJoke);
 		}).catch(err => console.error(err));
 
+//insert county code from list to fetch
 
 
 
+//retrieves county covid data from api 
+function goFetch() {
+	
+	var select = document.getElementById('county')
+	var value = select.options[select.selectedIndex].value
+	var apiURL = 'https://api.covidactnow.org/v2/county/' + value + '.json?apiKey=805adad0a8864a70a3239476c6971e3e'
+	console.log(value)
+	console.log(apiURL)
+	fetch(apiURL)
+			.then(response => response.json())
+			.then(
+				response => {console.log(response.metrics.weeklyNewCasesPer100k)
+					var levelPreface = document.getElementById('preface')
+					var communityLevel  
+					var levelText = document.getElementById('level')
+					var levelChanger = function() {
+						if (response.communityLevels.cdcCommunityLevel === 0) {
+							communityLevel = 'Low'
+						} else if (response.communityLevels.cdcCommunityLevel === 1) {
+							communityLevel = 'Medium'
+						} else if (response.communityLevels.cdcCommunityLevel === 2) {
+							communityLevel = 'High'
+						} else {
+							communityLevel = 'Unavailable, Sorry!'
+						}
+						levelText.innerHTML = communityLevel
+					}
+					levelPreface.innerHTML = 'CDC Community Level is '
+					levelChanger()
+					console.log(communityLevel)
+                     
+      }
+			)
+		}
+					
 
+document.getElementById('searchBtn').addEventListener('click', goFetch)
 // --- Event Listeners --- //
 
 norrisButton.addEventListener("click", saveAdvice);
 dadJokeButton.addEventListener("click", saveDadJoke);
 badJokeButton.addEventListener("click", saveBadJoke);
-
