@@ -12,9 +12,9 @@ nav {
     background-color: rgb(240, 209, 235);
 }
 
-div {
+/* div {
     background-color: rgb(244, 239, 232);
-}
+} */
 
 img {
     display: block;
@@ -115,5 +115,15 @@ html {
 } */
 
 #map {
-    display: inline;
+    /* display: inline; */
+    width:60%;
+    height:100%;
+}
+
+#results {
+height: 500px;
+}
+
+.geo-data {
+    width: 25%;
 }
