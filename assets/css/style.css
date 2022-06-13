@@ -14,10 +14,6 @@ nav {
     background-image: linear-gradient(rgb(212, 175, 175), rgb(255, 110, 110));
 }
 
-div {
-    border-radius: 5px;
-    background-image: linear-gradient(white, rgb(150, 138, 120));
-}
 
 img {
     display: block;
