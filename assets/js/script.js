@@ -202,9 +202,10 @@ function goFetch() {
 						}
 						levelText.innerHTML = communityLevel
 					}
-					levelPreface.innerHTML = 'CDC Community Level is '
+					levelPreface.innerHTML = 'CDC Community Level is: '
 					levelChanger()
 					console.log(communityLevel)
+					document.getElementById('level-box').hidden = false;
                      
       }
 			)
