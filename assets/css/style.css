@@ -84,6 +84,14 @@ img {
 
 #title {
     font-size: 5vw;
+    font-family: 'Shrikhand', cursive;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+#description {
+    font-family: 'Shrikhand', cursive;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 300;
 }
 
 @media screen and (min-width: 768px) {
