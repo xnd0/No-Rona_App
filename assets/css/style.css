@@ -4,13 +4,12 @@
 
 
 body {
-    /* background-color: rgb(234, 221, 202); */
     background-image: linear-gradient(white, rgb(150, 138, 120));
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 nav {
     text-align: center;
-    /* background-color: rgb(240, 209, 235); */
     background-image: linear-gradient(rgb(212, 175, 175), rgb(255, 110, 110));
 }
 
@@ -21,6 +20,13 @@ img {
     margin-right: auto;
     width: 90%;
     border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* --- Class Selectors --- */
@@ -68,8 +74,6 @@ img {
 /* --- ID Selectors --- */
 
 #quoteContainer {
-    /* background-color: rgb(133, 19, 19);
-    color:antiquewhite; */
     text-align: center;
 }
 
@@ -84,92 +88,7 @@ img {
     font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
-#description {
-    font-family: 'Shrikhand', cursive;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-weight: 300;
-}
 
-
-
-
-/* Gmap */
-
-/* element.style {
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-
-body {
-    margin-top: 80px;
-}
-
-
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    background-color: #fff;
-} */
-
-/* body {
-    margin: 0;
-}
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-user agent stylesheet
-body {
-    display: block;
-    margin: 8px;
-}
-
-html {
-    font-size: 62.5%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-
-*:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-*:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-} */
-
-#map {
-    /* display: inline; */
-    width:60%;
-    height:100%;
-}
-
-#results {
-height: 500px;
-}
-
-.geo-data {
-    width: 25%;
-}
 @media screen and (min-width: 768px) {
     #card-wrap {        
         display: flex;
@@ -180,6 +99,10 @@ height: 500px;
     .card {
         flex: 1 0 28%;
         max-width: 25%;
+    }
+    .index-card {
+        flex: 1 0 40%;
+        max-width: 40%;
     }
 
 

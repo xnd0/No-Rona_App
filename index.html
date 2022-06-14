@@ -6,10 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Zen+Kaku+Gothic+New:wght@300;900&display=swap" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAF5xZ_fjKAvbZ5mFsSnnP8UHCPiw3N41c&callback=initMap" async></script>
+    <link rel="stylesheet" href="./assets/css/norris.css" />
     <title>The No-Rona App</title>
 </head>
 
@@ -23,8 +20,70 @@
         </nav>
     </section>
 
-
     <!-- Main Section  -->
+    <section id="card-wrap">
+        <section class="outline main index-card">
+
+            <!-- Title -->
+            <div class="outline">
+                <h2>The No-Rona Advice & Comic Relief App</h2>
+            </div>
+
+
+            <!-- Instructions / Intro Area -->
+            <div class="outline">
+                <h3>Description of Site / Instructions on use:</h3>
+                <p>Search by County to determine the local risk of covid exposure:</p>
+
+                <div>
+
+                    <!-- Search input -->
+                    <select id="county">
+                        <option value="06037">Los Angeles County</option>
+                        <option value="13075">Cook County</option>
+                        <option value="13145">Harris County</option>
+                        <option value="04013">Maricopa County</option>
+                        <option value="06073">San Diego County</option>
+                        <option value="06059">Orange County</option>
+                        <option value="18103">Miami Dade County</option>
+                        <option value="01047">Dallas County</option>
+                        <option value="06065">Riverside County</option>
+                        <option value="06031">Kings County</option>
+                    </select>
+                    <button id="searchBtn">Search</button>
+                </div>
+
+                <!-- Results Area -->
+                <div id="results">
+                    <div id="covidApi">
+                        <h3 id="preface"></h3>
+                        <h2 id="level"></h2>
+                        <h3 id="postface"></h3>
+                    </div>
+                </div>
+
+                <p>... then get advice from Chuck Norris on how to survive, and if that isn't helpful -- you can laugh
+                    yourself healthy with some corny comedy!</p>
+            </div>
+
+        </section> <!-- ^^ End Main Section ^^ -->
+
+        <!-- Rip Torn img -->
+        <section class="index-card">
+            <img src="./assets/images/ripTorn_dodgeVirus.jpeg"
+                alt="Rip Torn from DodgeBall meme with text 'If you can dodge a wrench, you can dodge a virus">
+                <p style="color: red;">*notice this website is not responsible for the advice and/or jokes rendered from other APIs*</p>
+        </section>
+
+    </section>
+
+    <footer>
+        <a href="./norris.html">-quick link to the norris & joke page-</a>
+        <a href="./saveDisplay.html">-quick link to your saved items-</a>
+    </footer>
+
+
+
     <section class="outline main">
 
         <!-- Title -->
@@ -92,6 +151,7 @@
         </div>
 
     </section>   <!-- ^^ End Main Section ^^ -->
+
     <script src="./assets/js/script.js"></script>
     
     
