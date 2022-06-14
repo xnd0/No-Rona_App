@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/norris.css" />
+
     <title>The No-Rona App</title>
 </head>
 
@@ -19,15 +21,6 @@
         </nav>
     </section>
 
-            <!-- Chuck Norris Kills Covid -->
-            <div class="outline">
-                <section class="outline">
-                    <h2>Advice from Chuck Norris and Comic Relief</h2>
-                    <a href="./norris.html">-Link to the Norris Page-</a>
-                </section>
-            </div>
-
-
     <!-- Main Section  -->
     <section class="outline main">
 
@@ -40,47 +33,44 @@
         <!-- Instructions / Intro Area -->
         <div class="outline">
             <h3>Description of Site / Instructions on use:</h3>
-            <p>Search by County to determine the local risk of covid exposure</p>
-            <p>Get advice from Chuck Norris on how to survive, and if that isn't helpful, you can at least laugh yourself health with some corny comedy!</p>
-            <p>*note* this website is not responsible for the advice and/or jokes rendered from other APIs</p>
-        </div>
+            <p>Search by County to determine the local risk of covid exposure:</p>
 
-        <!-- Location Input Form -->
-        <div class="outline">
-            <!-- <h3>Location Input Form (grab userInput here)</h3> -->
-                      <!-- Search input -->
-                      <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-            <select id="county">
-                <option value="06037">Los Angeles County</option>
-                <option value="13075">Cook County</option>
-                <option value="13145">Harris County</option>
-                <option value="04013">Maricopa County</option>
-                <option value="06073">San Diego County</option>
-                <option value="06059">Orange County</option>
-                <option value="18103">Miami Dade County</option>
-                <option value="01047">Dallas County</option>
-                <option value="06065">Riverside County</option>
-                <option value="06031">Kings County</option>
-            </select>
-            <button id="searchBtn">Search</button>
+            <div class="outline">
+
+                <!-- Search input -->
+                <select id="county">
+                    <option value="06037">Los Angeles County</option>
+                    <option value="13075">Cook County</option>
+                    <option value="13145">Harris County</option>
+                    <option value="04013">Maricopa County</option>
+                    <option value="06073">San Diego County</option>
+                    <option value="06059">Orange County</option>
+                    <option value="18103">Miami Dade County</option>
+                    <option value="01047">Dallas County</option>
+                    <option value="06065">Riverside County</option>
+                    <option value="06031">Kings County</option>
+                </select>
+                <button id="searchBtn">Search</button>
+            </div>
+
+            <p>... then get advice from Chuck Norris on how to survive, and if that isn't helpful -- you can laugh yourself healthy with some corny comedy!</p>
+            <p>*notice* this website is not responsible for the advice and/or jokes rendered from other APIs</p>
         </div>
 
         <!-- Results Area -->
-        <div class="outline" id="results">
-
-
-           
-            <!-- <div id="map"  style="width:60%; height: 300px; position: relative;float: right;"></div> -->
+        <div id="results">
             <div id="covidApi">
                 <h2 id="preface"></h2>
                 <h2 id="level"></h2>
-            </div>  
+            </div>
         </div>
 
 
-    </section>   <!-- ^^ End Main Section ^^ -->
+    </section> <!-- ^^ End Main Section ^^ -->
 
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAF5xZ_fjKAvbZ5mFsSnnP8UHCPiw3N41c&callback=initMap" async defer></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAF5xZ_fjKAvbZ5mFsSnnP8UHCPiw3N41c&callback=initMap"
+        async defer></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
