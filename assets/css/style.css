@@ -63,6 +63,10 @@ img {
         flex: 1 0 28%;
         max-width: 25%;
     }
+    .index-card {
+        flex: 1 0 40%;
+        max-width: 40%;
+    }
 
 
 }
