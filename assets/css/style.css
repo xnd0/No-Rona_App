@@ -28,12 +28,31 @@ img {
     background-color: rgb(240, 209, 235);
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.search-box {
+    text-align: center;
+    padding: 12%;
+    
+
+}
+
+.outline-box {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
 .outline {
     border: 1px solid rgb(19, 19, 19);
     border-radius: 5px;
     margin: 2%;
     padding-left: 8px;
     padding-right: 8px;
+    text-align: center;
 }
 
 
@@ -54,7 +73,22 @@ img {
     text-align: center;
 }
 
+#level {
+    text-align: center;
+    font-size: 5vw;
+}
 
+#title {
+    font-size: 5vw;
+    font-family: 'Shrikhand', cursive;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+#description {
+    font-family: 'Shrikhand', cursive;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 300;
+}
 
 
 
