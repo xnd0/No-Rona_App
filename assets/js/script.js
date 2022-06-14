@@ -160,6 +160,7 @@ function goFetch() {
 			.then(
 				response => {console.log(response.metrics.weeklyNewCasesPer100k)
 					var levelPreface = document.getElementById('preface')
+					var levelPostface = document.getElementById('postface')
 					var communityLevel  
 					var levelText = document.getElementById('level')
 					var levelChanger = function() {
@@ -168,14 +169,16 @@ function goFetch() {
 						} else if (response.communityLevels.cdcCommunityLevel === 1) {
 							communityLevel = 'Medium'
 						} else if (response.communityLevels.cdcCommunityLevel === 2) {
-							communityLevel = 'High'
+							communityLevel = 'High!'
 						} else {
 							communityLevel = 'Unavailable, Sorry!'
 						}
 						levelText.innerHTML = communityLevel
 					}
-					levelPreface.innerHTML = 'Better get some advice from Chuck Norris (and a joke or two!) <br> <a href="./norris.html">-Link to the Norris Page-</a> <br> CDC Community Level is '
-					levelChanger()
+					levelPreface.innerHTML = 'Community Level risk in this county is ';
+					levelChanger();
+					levelPostface.innerHTML = '...better check this out to help deal: <a href="./norris.html">Click Here</a> ' 
+
 					console.log(communityLevel)
                      
       }
