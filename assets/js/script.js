@@ -177,7 +177,7 @@ function goFetch() {
 					}
 					levelPreface.innerHTML = 'Community Level risk in this county is ';
 					levelChanger();
-					levelPostface.innerHTML = '...better check this out to help deal: <a href="./norris.html">Click Here</a> ' 
+					levelPostface.innerHTML = '...better check this out to help deal: <a href="./norris.html">Click Here</a>' 
 
 					console.log(communityLevel)
                      
