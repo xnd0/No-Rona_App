@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/norris.css" />
-
     <title>The No-Rona App</title>
 </head>
 
@@ -84,7 +83,79 @@
     </footer>
 
 
+
+    <section class="outline main">
+
+        <!-- Title -->
+        <div class="outline">
+            <h2>The No-Rona Advice & Distraction App</h2>
+        </div>
+
+
+        <!-- Instructions / Intro Area -->
+        <div class="outline">
+            <h3>Description of Site / Instructions on use:</h3>
+            <p>Search by County to determine the local risk of covid exposure</p>
+            <p>-or- type in a location to get those results</p>
+            <p>Get advice from Chuck Norris on how to survive, and if that isn't helpful, you can at least laugh yourself health with some corny comedy!</p>
+            <p>*note* this website is not responsible for the advice and/or jokes rendered from other APIs</p>
+        </div>
+
+        <!-- Location Input Form -->
+        <div class="outline">
+            <!-- <h3>Location Input Form (grab userInput here)</h3> -->
+                      <!-- Search input -->
+                      <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+            <select id="county">
+                <option value="06037">Los Angeles County</option>
+                <option value="13075">Cook County</option>
+                <option value="13145">Harris County</option>
+                <option value="04013">Maricopa County</option>
+                <option value="06073">San Diego County</option>
+                <option value="06059">Orange County</option>
+                <option value="18103">Miami Dade County</option>
+                <option value="01047">Dallas County</option>
+                <option value="06065">Riverside County</option>
+                <option value="06031">Kings County</option>
+            </select>
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Results Area -->
+        <div class="outline" id="results">
+            <h2>Results:</h2>
+            <ul class="geo-data">
+                <li>Full Address: <span id="location"></span></li>
+                <li>Postal Code: <span id="postal_code"></span></li>
+                <li>Country: <span id="country"></span></li>
+                <li>Latitude: <span id="lat"></span></li>
+                <li>Longitude: <span id="lon"></span></li>
+            </ul>  
+
+
+            <!-- Google map -->
+            <div id="map"  style="width:60%; height: 300px; position: relative;float: right;"></div>
+            <div id="level-box">
+                <h2 id="preface"></h2>
+                <h2 id="level"></h2>
+            </div>  
+        </div>
+
+
+        <!-- Chuck Norris Kills Covid -->
+        <div class="outline">
+            <section class="outline">
+                <h2>Advice from Chuck Norris and Comic Relief</h2>
+                <a href="./norris.html">-Link to the Norris Page-</a>
+            </section>
+        </div>
+
+    </section>   <!-- ^^ End Main Section ^^ -->
+
     <script src="./assets/js/script.js"></script>
+    
+    
+    
 </body>
 
 </html>

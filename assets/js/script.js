@@ -147,6 +147,7 @@ fetch('https://jokes-by-api-ninjas.p.rapidapi.com/v1/jokes', options3)
 
 
 
+
 //retrieves county covid data from api 
 function goFetch() {
 	
@@ -175,17 +176,24 @@ function goFetch() {
 						}
 						levelText.innerHTML = communityLevel
 					}
+
 					levelPreface.innerHTML = 'Community Level risk in this county is ';
 					levelChanger();
 					levelPostface.innerHTML = '...better check this out to help deal: <a href="./norris.html">Click Here</a>' 
 
+
+					levelPreface.innerHTML = 'CDC Community Level is: '
+					levelChanger()
+
 					console.log(communityLevel)
+					document.getElementById('level-box').hidden = false
                      
       }
 			)
 		}
 					
 
+console.log(document)
 document.getElementById('searchBtn').addEventListener('click', goFetch)
 // --- Event Listeners --- //
 
