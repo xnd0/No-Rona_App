@@ -246,7 +246,7 @@ function initMap() {
 	
 
 
-  initMap()
+  
 
 //insert county code from list to fetch
 
@@ -282,13 +282,14 @@ function goFetch() {
 					levelPreface.innerHTML = 'CDC Community Level is: '
 					levelChanger()
 					console.log(communityLevel)
-					document.getElementById('level-box').hidden = false;
+					document.getElementById('level-box').hidden = false
                      
       }
 			)
 		}
 					
 
+console.log(document)
 document.getElementById('searchBtn').addEventListener('click', goFetch)
 // --- Event Listeners --- //
 

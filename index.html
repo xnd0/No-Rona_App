@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Zen+Kaku+Gothic+New:wght@300;900&display=swap" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAF5xZ_fjKAvbZ5mFsSnnP8UHCPiw3N41c&callback=initMap" async></script>
     <title>The No-Rona App</title>
 </head>
 
@@ -75,7 +76,7 @@
 
             <!-- Google map -->
             <div id="map"  style="width:60%; height: 300px; position: relative;float: right;"></div>
-            <div id="covidApi">
+            <div id="level-box">
                 <h2 id="preface"></h2>
                 <h2 id="level"></h2>
             </div>  
@@ -91,9 +92,10 @@
         </div>
 
     </section>   <!-- ^^ End Main Section ^^ -->
-
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAF5xZ_fjKAvbZ5mFsSnnP8UHCPiw3N41c&callback=initMap" async defer></script>
     <script src="./assets/js/script.js"></script>
+    
+    
+    
 </body>
 
 </html>
